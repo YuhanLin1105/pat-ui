@@ -25,7 +25,7 @@ import 'pat-ui/dist/index.css';
 ### Example
 
 ```js
-import {Button} from 'pat-ui';
+import { Button } from 'pat-ui';
 
 const App = () => (
   <>

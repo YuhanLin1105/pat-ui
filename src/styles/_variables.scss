@@ -78,7 +78,7 @@ $body-text-align: null !default;
 
 // Spacing
 $spacer: 1rem !default;
-
+$story-component-margin-bottom:25px;
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
@@ -264,3 +264,28 @@ $dropdown-transition: all 0.4s !default;
 
 // dropdown arrow
 $dropdown-arrow-color: $black;
+
+
+// rating progress colors
+$rating-progress-bg-color:rgb(235, 235, 235);
+$rating-progress-font-color:$white;
+
+//rating progress dimensions
+$rating-progress-default-width:230px;
+$rating-progress-border-radius:30px;
+$rating-progress-noText-default-height:20px;
+$rating-progress-default-fontsize:94%;
+$rating-progress-primary-height:100%;
+$rating-progress-text-margin-left:10px;
+
+//rating like colors
+$rating-like-bg-color: #fff5f6;
+$rating-like-font-active-color:rgb(47, 47, 47);
+$rating-like-font-default-color:gray;
+$rating-like-default-border:1px solid lightgray;
+$rating-like-active-border:1px solid transparent;
+
+//rating like dimensions
+$rating-like-padding:10px;
+$rating-like-borderRadius:7px;
+$rating-like-text-margin-l:10px;

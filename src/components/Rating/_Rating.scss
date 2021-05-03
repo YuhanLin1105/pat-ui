@@ -1,0 +1,111 @@
+.rating {
+  cursor: pointer;
+  &--disabled {
+    cursor: not-allowed;
+  }
+}
+.progress {
+  background-color: $rating-progress-bg-color;
+  width: $rating-progress-default-width;
+  border-radius: $rating-progress-border-radius;
+
+  &--noText {
+    @extend .progress;
+    height: $rating-progress-noText-default-height;
+  }
+}
+
+.progress__primary {
+  border-radius: $rating-progress-border-radius;
+  font-size: $rating-progress-default-fontsize;
+  color: $rating-progress-font-color;
+  height: $rating-progress-primary-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 100ms ease-in-out;
+}
+
+.progress__barValue {
+  margin-left: $rating-progress-text-margin-left;
+}
+
+.likeButton {
+  display: flex;
+  position: relative;
+}
+
+.patComponent {
+  margin-bottom: $story-component-margin-bottom;
+}
+
+.ratingSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.ratingRadio {
+  display: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-bounce {
+  animation: bounce 0.2s;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart__label {
+  display: flex;
+  border: $rating-like-default-border;
+  padding: $rating-like-padding;
+  align-items: center;
+  border-radius: $rating-like-borderRadius;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+
+  &__like {
+    margin-left: $rating-like-text-margin-l;
+    color: $rating-like-font-default-color;
+    &-active {
+      @extend .heart__label__like;
+      color: $rating-like-font-active-color;
+    }
+  }
+  &-active {
+    @extend .heart__label;
+    background-color: $rating-like-bg-color;
+    border: $rating-like-active-border;
+  }
+}

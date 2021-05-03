@@ -25,8 +25,11 @@ export type IconColor =
   | 'purple'
   | 'pink'
   | 'brown'
-  | 'grey'
-  | 'black';
+  | 'gray'
+  | 'black'
+  |'gold'
+  | 'lightgray'
+  | '#FF0032';
 
 // export enum IconRotated {
 //   Clockwise = 'clockwise',
@@ -110,7 +113,7 @@ const Icon: FC<IIconProps> = (props) => {
         viewBox={IconPath[name].viewBox}
         height={height}
       >
-        <path fill={color} fill-opacity=".25" d={IconPath[name].path} />
+        <path fill={color} fillOpacity=".25" d={IconPath[name].path} />
       </svg>
     );
   } else if (loading) {
