@@ -74,3 +74,19 @@
   border-radius: $border-radius;
   border-color: $border-color;
 }
+
+// spinner mixins
+@mixin spinner-size($size, $thickness) {
+  width: $size;
+  height: $size;
+  margin: $thickness;
+  border-width: $thickness;
+  border-style: solid;
+}
+@mixin spinner-color($color) {
+  border-color: $color transparent transparent transparent;
+}
+@mixin spinner-container($size) {
+  width: $size;
+  height: $size;
+}
