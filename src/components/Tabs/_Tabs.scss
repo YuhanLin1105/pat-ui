@@ -1,0 +1,90 @@
+html {
+  scroll-behavior: smooth;
+}
+.tabs {
+  &.vertical {
+    display: flex;
+    flex-direction: row;
+  }
+  &__panel {
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+    &.panel-type-default {
+      @include tabs-panel-type($white);
+    }
+    &.panel-type-primary {
+      @include tabs-panel-type($light-blue);
+    }
+    &.centered {
+      justify-content: center;
+    }
+
+    &.scrollable {
+      &-row {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        overflow-x: scroll;
+      }
+      &-col {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        overflow-y: scroll;
+      }
+    }
+    &.vertical {
+      max-height: 200px;
+      min-width: 180px;
+      max-width: 280px;
+      flex-direction: column;
+
+      & .tabs__panel__tab-button {
+        border-right: 2px solid transparent;
+        border-bottom: none;
+      }
+    }
+
+    &__tab {
+      &-button {
+        height: 100%;
+        width: 100%;
+        min-width: 180px;
+        max-width: 260px;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-transform: uppercase;
+
+        &.tab-type-default {
+          @include tab-btn-style($gray-500, $light-blue);
+        }
+        &.tab-type-primary {
+          @include tab-btn-style($gray-400, $white);
+        }
+        &.wrapped {
+          word-wrap: break-word;
+          white-space: normal;
+        }
+      }
+    }
+  }
+  &__content {
+    display: none;
+    background-color: #eee;
+    padding: 20px;
+    width: 100%;
+    &.actived {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttton should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="tabs"
+  >
+     
+    <div
+      class="tabs__panel panel-type-default"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs Renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="tabs"
+  />
+</DocumentFragment>
+`;
+
+exports[`Tabs should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="tabs"
+  />
+</DocumentFragment>
+`;
+
+exports[`Tabs should match snapshot 2`] = `
+<DocumentFragment>
+  <div
+    class="tabs"
+  />
+</DocumentFragment>
+`;
