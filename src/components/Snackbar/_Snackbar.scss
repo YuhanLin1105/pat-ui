@@ -1,0 +1,121 @@
+@use "sass:color";
+@use "sass:selector";
+
+@mixin easeAnimation($time: 1s) {
+  transition: all $time ease-in-out;
+}
+
+.snackbar {
+  $root-snackbar: &;
+  z-index: 100;
+  position: fixed;
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: $font-weight-bold;
+  transform: scale(0);
+  @include easeAnimation(0.3s);
+
+  &.open {
+    @include easeAnimation(0.3s);
+    transform: scale(1);
+  }
+
+  //define position
+  &.v_bottom {
+    bottom: 10%;
+  }
+
+  &.v_top {
+    top: 10%;
+  }
+
+  &.v_center {
+    top: 50%;
+  }
+
+  &.h_left {
+    left: 10%;
+  }
+
+  &.h_center {
+    left: 50%;
+  }
+
+  &.h_right {
+    right: 10%;
+  }
+
+  //define background color and text color of snackbar
+  @mixin snackbarColor($bgcolor: $white) {
+    background-color: $bgcolor;
+    color: setTextColor($bgcolor);
+  }
+
+  @function setTextColor($bgcolor: $white) {
+    //adjust text color based on background color
+    // @error '$bgcolor: #{$bgcolor}';
+    @if (lightness($bgcolor) > 50) {
+      // @error 'return black #{$bgcolor}';
+      @return $black;
+    } @else {
+      // @error 'return white #{$bgcolor}';
+      @return $white;
+    }
+  }
+
+  //define colors based on type of snackbar
+  &__default {
+    @include snackbarColor;
+  }
+
+  &__error {
+    @include snackbarColor($danger);
+  }
+
+  &__warning {
+    @include snackbarColor($warning);
+  }
+
+  &__success {
+    @include snackbarColor($success);
+  }
+
+  &__info {
+    @include snackbarColor($info);
+  }
+  //close button
+  // @at-root &__close {
+  &__close {
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &::after {
+      //set background color of this pseudo element to the color of the text
+      background-color: currentColor;
+      content: '';
+      position: absolute;
+      // top: 8px;
+      width: 18px;
+      height: 3px;
+      top: 22px;
+      right: 10px;
+      transform: rotate(45deg);
+      @include easeAnimation;
+    }
+
+    &::before {
+      //set background color of this pseudo element to the color of the text
+      background-color: currentColor;
+      content: '';
+      position: absolute;
+      // top: 8px;
+      width: 18px;
+      height: 3px;
+      top: 22px;
+      right: 10px;
+      transform: rotate(-45deg);
+      @include easeAnimation;
+    }
+  }
+}
